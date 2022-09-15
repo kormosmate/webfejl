@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+*{
+    margin:0;
+    padding:0;  
+}
+body{
+    font-family: Source Code Pro;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+.flexCenter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border: 1px solid #1e1e1e;
+}
+.break{
+    width: 100%;
+}
+.box{
+    height: 4em;
+    border: 1px solid grey;
+    flex:1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: whitesmoke;
+}
+.resultBox
+{
+    flex:1;
+    height: 2em;
+    font-size: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5px;
+    background-color: #d1d1d1;
+}
+.clear{
+    font-style: bold;
+    background-color: #ff3333;
+}
+.eq{
+    font-style:bold;
+    background-color: cadetblue;
+}
+.op{
+    font-style: bold;
+    background-color: gold;
+}

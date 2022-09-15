@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="szam">Az első szám: </p>
+    <p id="szam">A második szám: </p>
+    <span></span>
+    <div></div>
+    <script>
+        let s1 = +"123";
+        let s2 = +"12.5";
+        console.log(typeof(s1),typeof(s2),s1+s2)
+
+        //fgv:
+        function osszead(a,b) {
+            return a+b;
+        }
+        let a = 100
+        let b = 50
+        console.log(`A két szám összege: ${osszead(a,b)}`);
+        document.querySelector("div").innerHTML = `A két szám összege: ${osszead(a,b)}`
+        document.querySelector('.szam').innerHTML += a;
+        document.querySelector('#szam').innerHTML += b;
+        //nyílfv
+        const add=(a,b)=>a+b;
+        document.querySelector("span").innerHTML = `A két szám összege: ${add(a,b)}`
+        //legnagyobb szam
+        const nagyobb =(a,b)=>a>b ? a : b
+        console.log(`A nagyobb szám: ${nagyobb(a,b)}`)
+        //legkisebb szam
+        const kisebb =(a,b)=>a<b ? a : b
+        console.log(`A kisebb szám: ${kisebb(a,b)}`)
+  </script>
+</body>
+</html>

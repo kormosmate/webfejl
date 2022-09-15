@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <div class="box">
+        <h1>Jó vagy fejszámolásban?</h1>
+        <span id="szam1">szam1</span> + <span id="szam2">szam2</span> = <input type="number" name="" id="beadott">
+        <input type="button" onclick="fgv()" value="Ellenőrzés">
+        <p id="kiir"></p>
+    </div>
+<script>
+        let szam1 = Math.floor(Math.random()*100);
+        let szam2 = Math.floor(Math.random()*100);
+        document.getElementById("szam1").innerHTML = szam1;
+        document.getElementById("szam2").innerHTML = szam2; 
+    function fgv()
+    {
+    let beadott = document.getElementById("beadott").value;
+    if((szam1+szam2) == beadott)
+    {
+        document.getElementById("kiir").innerHTML = "👍"
+    }
+    else{
+        document.getElementById("kiir").innerHTML = "❌"
+    }
+    }
+</script>
+</body>
+</html>

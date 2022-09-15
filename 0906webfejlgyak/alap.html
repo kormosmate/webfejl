@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista"></ul>
+    <script>
+        let nev = "Máté";
+        console.log("Üdvözöllek a konzolban " + nev + "!")
+        console.log(`Üdvözöllek a konzolban ${nev}!`);
+        console.log(`Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Quaerat eligendi, id soluta dolorem doloribus quam nisi libero dolorum. 
+         Rem amet sint dolore voluptate repellat inventore eius exercitationem optio consectetur. Dolor.`)
+
+         let [a,b,c,d] = [1,2,3,4];
+         console.log(a,b,c,d);
+         const s = 100;
+         console.log(nev[0],nev.length,nev[nev.length-1])
+         let pont = 40;
+         let tipus = "A1"
+         if(pont >= 40)
+         console.log("Sikeres vizsga! Gratulálok!")
+         else
+         console.log("Sikertelen a vizsga! Sajnálom.")
+
+         pont>=40 && tipus=="A1" && console.log("Gratulálok!!!!!!!")
+         let szamok = [1,4,99,23,2,6]
+         console.log(szamok)
+
+         let ul = document.getElementById('lista')
+         console.log(ul)
+         for(let i = 0; i <szamok.length;i++)
+         {
+            console.log(`index:${i} - érték: ${szamok[i]}`)
+            szoveg+= `<li></li>`
+         }
+    </script>
+    
+</body>
+</html>

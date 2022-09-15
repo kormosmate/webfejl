@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="" id="nev">
+        <input type="button" value="koszon" onclick="beir()">
+    </form>
+    <p class="udv"></p>
+    <ul></ul>
+    <script>
+
+        function koszon()
+        {
+            let nev = document.getElementById("nev").value
+            console.log(nev)
+            document.querySelector('.udv').innerHTML = `Szép napot <b>${nev}</b>!`
+        }
+        let nevek = []
+        function beir()
+        {
+          let nev = document.getElementById("nev").value
+          document.getElementById("nev").value = ""
+          if(nev.length>0)
+          {
+          nevek.push(nev)
+          console.log(nevek) 
+          let liStr = ""
+          for(let x of nevek)
+          {
+            liStr += `<li>${x}</li>`
+          }  
+          document.querySelector('ul').innerHTML = liStr
+        }
+        else
+        alert("Üres adatot nem adhatsz meg!")
+        }
+
+    </script>
+</body>
+</html>

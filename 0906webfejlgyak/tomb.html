@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="hossz"></p>
+    <p class="tartalom"></p>
+    <ul></ul>
+    <ol></ol>
+    <script>
+        let szamok = [1,5,89,0,99,23]
+        // tombok hossza
+        document.querySelector(".hossz").innerHTML = `A tömb hossza: ${szamok.length}`;
+        document.querySelector(".tartalom").innerHTML = "A tömb tartalma: ";
+        for (let i = 0; i<szamok.length;i++) {
+            console.log(`index: ${i} - érték: ${szamok[i]}`)
+            document.querySelector(".tartalom").innerHTML += `i: ${i} | érték: ${szamok[i]}<br>`;
+            
+        }
+        let liStr = ""
+        for(let szam of szamok)
+        {
+            console.log(szam)
+            liStr += `<li>${szam}</li>`
+        }
+        console.log(liStr)
+        document.querySelector('ul').innerHTML = liStr
+        let olStr = ""
+        for(let x in szamok)
+        {
+            olStr += `<li>index:${x} érték: ${szamok[x]}`
+        }
+        document.querySelector('ol').innerHTML = olStr
+    </script>
+</body>
+</html>

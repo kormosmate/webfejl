@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #1e1e1e;
+            
+        }
+        .container{
+            width: 500px;
+            height: 150px;
+            display: flex;
+            flex-direction: row;
+            background-color: #ffd62a;
+            padding-inline-start: 0px;
+            justify-content:baseline;
+            align-items: flex-start;
+        }
+        .container2{
+            width: 500px;
+            height: 150px;
+            display: flex;
+            flex-direction: row;
+            background-color: #ffd62a;
+            padding-inline-start: 0px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .container3{
+            width: 500px;
+            height: 150px;
+            display: flex;
+            flex-direction: row;
+            background-color: #ffd62a;
+            padding-inline-start: 0px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container4{
+            width: 500px;
+            height: 150px;
+            display: flex;
+            flex-direction: row;
+            background-color: #ffd62a;
+            padding-inline-start: 0px;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
+            background-color: #b02afe;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="border: 10px solid darkblue;margin: 20px; padding: 20px; background-color: goldenrod; width: 500px;">
+        <p>Ez egy pár soros szöveg, ami a CSS doboz modellt mutatja be. 
+        A háttérszín goldenrod, 20 pixel a belső margó, 10 pixel a széles keret sötétkék színnel
+      és folytonos vonallal rajzolva, a külső margó 20 pixel széles.</p>
+    </div><hr>
+
+    <ul class="container">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>
+    <ul class="container2">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>    
+    <ul class="container3">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul> 
+    <ul class="container4">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul> 
+    <hr>        
+</body>
+</html>
