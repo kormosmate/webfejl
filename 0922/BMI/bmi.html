@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container border border-primary">
+        <h1 class="text-center text-primary">BMI kalkulátor</h1>
+        <div class="jumbotron text-center">
+            <h2>20.0</h2>
+            <hr>
+            <h4>Normál testsúly</h4>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="height">Magasság - cm:</label>
+                <div class="d-flex">
+                    <input type="range" onchange="showValue(this)" class="form-control-range" id="height" min="50" max="250" value="50">
+                    <output class="text-primary pl-2" name="height">50</output>
+                </div>
+              </div>
+            <div class="form-group">
+                <label for="weight">Súly - kg:</label>
+                <div class="d-flex">
+                    <input type="range" onchange="showValue(this)" class="form-control-range" id="weight" min="20" max="200" value="20">
+                    <output class="text-primary pl-2" name="weight">20</output>
+                </div>
+              </div>
+              <button type="button" onclick="szamol()" class="btn btn-primary btn-lg btn-block mb-2 shadow">Számol</button>
+        </form>
+    </div>
+</body>
+<script>
+    function showValue(obj)
+    {
+        console.log(obj.value,obj.id);
+        if(obj.id == "height")
+        document.querySelector('output[name="height"]').innerHTML = obj.value;
+        else
+        document.querySelector('output[name="weight"]').innerHTML = obj.value;
+    }
+    function szamol()
+    {
+        console.log('klikk');
+        let h =+ document.getElementById('height').value;
+        let w =+ document.getElementById('weight').value;
+
+        console.log(h,w,typeof(h));
+        let bmi = w/((h/100)**2)
+        console.log(bmi);
+        document.querySelector('h2').innerHTML = bmi.toFixed(1);
+        let h4Obj = document.querySelector('h4');
+        let color;
+        if(bmi<18)
+        {
+            h4Obj.innerHTML = "Soványság ⚡";
+            h4Obj.style.color = "green";
+        }
+        else if(bmi>=18.8 && bmi<25)
+        {
+            h4Obj.innerHTML = "Normál testsúly 👍";
+            h4Obj.style.color = "pink";
+        }
+        else if(bmi>=25 && bmi<30)
+        {
+            h4Obj.innerHTML = "Túlsúly 😥";
+            h4Obj.style.color = "orange";
+        }
+        else{
+            h4Obj.innerHTML = "Elhízás 🐖";
+            h4Obj.style.color = "red";
+        }
+    }
+</script>
+</html>
