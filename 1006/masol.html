@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Másol</title>
+</head>
+<style>
+    body{
+        background-color: #1e1e1e;
+    }
+    input[type=button]
+    {
+        background-color: red;
+        color: white;
+    }
+</style>
+<body>
+    <form>
+        <textarea id="eredeti" cols="30" rows="10" style="background-color:whitesmoke;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nobis dolorum facilis deserunt vero. Atque facilis officia corporis, fugit modi molestiae, libero distinctio, at culpa tempora quasi. Sequi, nobis corporis!</textarea>
+        <input type="button" value="Másol" onclick="masol()">
+
+        <textarea id="masolat" cols="30" rows="10" readonly></textarea>
+        <input type="button" value="Töröl" onclick="torol()">
+    </form>
+
+<script>
+    function masol()
+    {
+        //kiolvasas
+        let szoveg = document.getElementById("eredeti").value
+        document.getElementById("masolat").value = szoveg;
+    }
+    function torol()
+    {
+        document.getElementById("masolat").value = "";
+    }
+</script>
+</body>
+</html>
