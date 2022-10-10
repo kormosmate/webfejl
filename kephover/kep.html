@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height: 280;
+        width: 150px;
+    }
+</style>
+<body>
+
+    <div class="container">
+        <div class="row">   
+         <img class="img-fluid" src="iwiw.jpg" id="kep" alt="iwiw">
+    </div>
+    <div class="row"></div>
+    <br>
+        <a class="bg-light p-3 border" onmouseover="csere()">Facebook</a>
+        <a class="bg-light p-3 border" onmouseover="csere2()">iwiw</a>
+    </div>
+
+    <script>
+        function csere()
+        {
+            document.querySelector("#kep").src = "fb.png"
+        }
+        function csere2()
+        {
+            document.querySelector("#kep").src = "iwiw.jpg"
+        }
+    </script>
+</body>
+</html>

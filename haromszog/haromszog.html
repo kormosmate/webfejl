@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Háromszög</title>
+</head>
+<body>
+    <form>
+        <label for="oldal">Add meg a háromszög <b>A</b> oldalát:</label>
+        <input type="number" id="a"><br>
+        <label for="oldal">Add meg a háromszög <b>B</b> oldalát:</label> 
+        <input type="number" id="b"><br>
+        <label for="oldal">Add meg a háromszög <b>C</b> oldalát:</label> 
+        <input type="number" id="c">   
+        <input type="button" value="számol" onclick="szamol()">
+    </form>
+    <div class="msg"></div>
+
+    <script>
+
+    function szamol()
+    {
+        let a = +document.querySelector("#a").value;
+        let b = +document.querySelector("#b").value;
+        let c = +document.querySelector("#c").value;
+        
+
+        if(a+b > c &&  a+c > b && b+c>a)
+        {
+            document.querySelector(".msg").innerHTML = "Szerkeszthető!";
+        }
+        else
+        document.querySelector(".msg").innerHTML = "Nem szerkeszthető!";
+    }        
+
+    </script>    
+</body>
+</html>
