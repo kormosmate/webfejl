@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        position: absolute;
+        
+    }
+    .box{
+        width: 300px;
+    }
+</style>
+<body>
+    <div class="box">
+    <input type="number" name="" id="a"><br>+
+    <input type="number" name="" id="b"><br>
+    <input type="button" onclick="check()" value="OK"><input type="number" name="" id="beadott"><br>
+    <input type="button" onclick="uj()" value="Új"><input type="text" name="" id="eredmeny"><br>
+    <img id="kep" src="" alt="">
+    </div>
+</body>
+
+<script>
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+    function uj()
+    {
+        a = Math.floor(Math.random()*100);
+        b = Math.floor(Math.random()*100);
+        document.getElementById("a").value = a;
+        document.getElementById("b").value = b;
+        document.querySelector("#kep").src = "var.gif";
+        document.getElementById("beadott").value = "";
+        document.getElementById("eredmeny").value = ""
+    }
+    function check()
+    {
+        let beadott = document.getElementById("beadott").value;
+
+        if(a+b == beadott && beadott != "")
+        {
+            document.getElementById("eredmeny").value = "Ügyes!"
+            document.querySelector("#kep").src = "igen.gif"
+        }
+        else
+        {
+            document.getElementById("eredmeny").value = "Butus!"
+            document.querySelector("#kep").src = "nem.gif"
+        }
+    }
+</script>
+</html>
