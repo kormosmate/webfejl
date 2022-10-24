@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Űrlap</title>
+</head>
+<body>
+    <form action="">
+    <div class="container">
+        <div class="row">
+            <div class="col-sd-6">
+                <label for="">Üzenet: </label>
+                <p></p>
+                <textarea name="" id="uzenet" cols="30" rows="10"></textarea>
+            </div>
+            <div class="col-sd-6">
+                <label for="">Név: </label>
+                <p></p>
+                <input type="text" name="" id="nev">
+                <p></p>
+                <label for="">Email: </label>
+                <p></p>
+                <input type="email" name="" id="email">
+                <p></p>
+                <input type="button" name="" id="" value="Küldés" onclick="send()">
+            </div>
+        </div>
+    </div>
+    </form>
+<script>
+    let pers={}
+    function send() {
+        console.log(obj)
+
+        let nev=document.getElementById("nev").value
+        if(nev.lenght>2)
+        pers.nev=nev
+        else
+        document.querySelector(".msg").innerHTML="Adjon meg igazi nevet!"
+
+        let email=document.getElementById("email").value
+        if(email.lenght>10)
+        pers.email=email
+        else
+        document.querySelector(".msg").innerHTML="Adjon meg igazi E-mailt!"
+
+        let uzenet=document.getElementById("uzenet").value
+        if(email.lenght>20)
+        pers.uzenet=uzenet
+        else
+        document.querySelector(".msg").innerHTML="Írjon egy üzenetet"
+    }
+</script>
+</body>
+</html>
