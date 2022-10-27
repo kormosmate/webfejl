@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyszerű számológép</title>
+</head>
+<body>
+    <h1>Egyszerű számológép</h1>
+    <form>
+        <input type="number" name="a" id="a" placeholder="Egyik szám">
+        <select name="" id="muvelet">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="b" id="b" placeholder="Másik szám">
+        <input type="button" onclick="szamol()" value="=">
+    </form>
+    <p id="eredmeny"></p>
+</body>
+<script>
+    function szamol()
+    {
+        let a  =+ document.getElementById('a').value;
+        let b =+ document.getElementById('b').value;
+        let muvelet = document.getElementById('muvelet').value;
+        if(muvelet == "+")
+        {
+            document.getElementById("eredmeny").innerHTML = a+b;
+        }
+        else if(muvelet == "-")
+        {
+            document.getElementById("eredmeny").innerHTML = a-b;
+        }
+        else if(muvelet == "*")
+        {
+            document.getElementById("eredmeny").innerHTML = a*b;
+        }
+        else
+        {
+            if(b != 0)
+            {
+                document.getElementById("eredmeny").innerHTML = a/b;
+            }
+            else
+            {
+                alert("Nullával nem osztunk!")
+            }
+        }
+
+    }
+</script>
+</html>
