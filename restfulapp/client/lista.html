@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UL LISTA</title>
+</head>
+<body>
+    <ul></ul>
+    <select name="" id=""></select>
+    <table>
+        <thead>
+            <tr>
+                <td>Név</td>
+                <td>Szak</td>
+                <td>Születési év</td>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+        async function getData(url,render){
+            const response = await fetch(url)
+            const data = await response.json()
+            //console.log('kliens oldalon megvannak az adatok: ',data)
+            render(data)
+        }
+    //meghívjuk a fgv-t LIelemeket állít elő
+    getData('../server/read.php',renderLI)
+        function renderLI(data){
+            console.log('render függvény: ',data)
+            let liStr = ""
+            for(let obj of data)
+            {
+                liStr +=`<li>${obj.nev}</li>`
+            }
+            document.querySelector('ul').innerHTML = liStr;
+        }
+        function renderOpt(data){
+            let optStr = ""
+            for(let obj of data)
+            {
+                optStr +=`<option>${obj.nev}</option>`
+            }
+            document.querySelector('select').innerHTML = optStr;
+        }
+    //meghívjuk a fgv-t Option tageket állít elő
+    getData('../server/read.php',renderOpt)
+
+        function tblRender(data){
+            let tblStr = "";
+            for(let obj of data)
+            {
+               tblStr += `
+               <tr>
+                <td>${obj.nev}</td>
+                <td>${obj.szak}</td>
+                <td>${obj.szev}</td>
+               </tr>
+               ` 
+            }
+            document.querySelector('table').innerHTML += tblStr;
+        }
+    getData("../server/read.php",tblRender)
+    </script>
+</body>
+</html>
