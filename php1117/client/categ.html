@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategóriák</title>
+</head>
+<body>
+    <select onchange="show(this)"></select>
+    <ul></ul>
+    <script src="getData.js"></script>
+    <script>
+        getData('../server/categ.php',renderOption)
+        function renderOption(data)
+        {
+            console.log(data)
+            let str="";
+            for(let obj of data)
+            {
+                str+=`<option>${obj.category}</option>`;
+            }
+            document.querySelector('select').innerHTML = str;
+        } 
+             
+        function show(objDOM)
+        {
+            let categ = objDOM.value;
+            getData(`../server/books.php?categ=${categ}`,renderLi)
+        }
+        function renderLi(data)
+        {
+            console.log(data);
+            let str = "";
+            for(let obj of data)
+            {
+                str += `<li>${obj.id} - ${obj.title} - ${obj.author}</li>`;
+            }
+            document.querySelector('ul').innerHTML = str;
+        }
+    </script>
+</body>
+</html>
